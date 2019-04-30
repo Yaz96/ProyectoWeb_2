@@ -1,0 +1,88 @@
+body {
+	background: url('./Pics/loginwall.jpg') no-repeat;
+	background-size: 100%;
+	margin-left: 0%;
+	margin-top: 0%;
+	background-attachment: fixed;
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+ 	 background-size: cover;
+	}
+
+
+body {
+  font-family: 'Titillium Web', sans-serif;
+}
+
+
+.form {
+
+  padding: 40px;
+  max-width:600px;
+  margin:300px auto;
+
+
+}
+
+
+label {
+  position:absolute;
+  transform:translateY(6px);
+  left:13px;
+  color:rgba($white,.5);
+  transition:all 0.25s ease;
+  -webkit-backface-visibility: hidden;
+  pointer-events: none;
+  font-size:22px;
+  .req {
+  	margin:2px;
+  	color:$main;
+  }
+}
+
+label.active {
+  transform:translateY(50px);
+  left:2px;
+  font-size:14px;
+  
+}
+
+label.highlight {
+	color: white;
+}
+
+
+.envolt {
+  position:relative;
+  margin-bottom:40px;
+  
+}
+
+
+
+.buttonLogin {
+  border:0;
+  outline:none;
+  border-radius:0;
+  padding:15px 0;
+  font-size:2rem;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+display:block;
+  width:100%;
+
+
+  
+}
+
+
+#etiquetas{
+  opacity:.1;
+}
+.envolt input {
+  width: 100%;
+  height: 37px;
+  font-size:26px;
+
+}
