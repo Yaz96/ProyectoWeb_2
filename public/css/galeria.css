@@ -1,0 +1,104 @@
+body {
+	background: url('./Pics/galeria.jpg') no-repeat;
+	background-size: 100%;
+	margin-left: 1%;
+	margin-right: 1%;
+	margin-top: 0%;
+   }
+	ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+		background-color: #333;
+	 }
+	 
+	 li {
+		float: left;
+	 }
+	 li p{
+		display: block;
+		color: white;
+		text-align: center;
+		padding: 0px 30px;
+		text-decoration: none;
+	 }
+	 
+	 li a {
+		display: block;
+		color: white;
+		text-align: center;
+		padding: 14px 16px;
+		text-decoration: none;
+	 }
+	 
+	 li a:hover:not(.active) {
+		background-color: #111;
+	 }
+
+
+	 .footer{
+		position: fixed;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		text-align: center;
+		}
+	 #imglogo2{
+	   position: relative;
+   }
+   #imglogo2 img{
+	margin-right: 20px;
+	float: right;
+	width: 200px;
+	height: 60px;
+	opacity: .8;
+	}
+	
+	.column {
+		float: left;
+		width: 25%;
+		padding: 10px;
+	 }
+	 
+	 /* Style the images inside the grid */
+	 .column img {
+		opacity: 0.8; 
+		cursor: pointer; 
+	 }
+	 
+	 .column img:hover {
+		opacity: 1;
+	 }
+	 
+	 /* Clear floats after the columns */
+	 .row:after {
+		content: "";
+		display: table;
+		clear: both;
+	 }
+	 
+	 /* The expanding image container */
+	 .container {
+		position: relative;
+		display: none;
+	 }
+	 
+	 /* Expanding image text */
+	 #imgtext {
+		position: absolute;
+		bottom: 15px;
+		left: 15px;
+		color: white;
+		font-size: 20px;
+	 }
+	 
+	 /* Closable button inside the expanded image */
+	 .closebtn {
+		position: absolute;
+		top: 10px;
+		right: 15px;
+		color: white;
+		font-size: 35px;
+		cursor: pointer;
+	 }

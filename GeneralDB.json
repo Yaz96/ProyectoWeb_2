@@ -1,0 +1,11 @@
+{ "tipo":"Imagen", "url": "FotosGal","name":"foto1.jpg" }
+{ "tipo":"Imagen", "url": "FotosGal","name":"foto2.jpg" }
+{ "tipo":"Imagen", "url": "FotosGal","name":"foto3.jpg" }
+{ "tipo":"Imagen", "url": "FotosGal","name":"foto4.jpg" }
+{ "tipo":"Imagen", "url": "FotosGal","name":"foto5.jpg" }
+{ "tipo":"Imagen", "url": "FotosGal","name":"foto6.jpg" } 
+{ "tipo":"Imagen", "url": "FotosGal","name":"foto7.jpg" } 
+{ "tipo":"Imagen", "url": "FotosGal","name":"foto8.jpg" } 
+{ "tipo":"Imagen", "url": "FotosGal","name":"foto9.jpg" }
+{"tipo:":"registro","timestamp": "1/19/2019 14:13:14","email": "gacy.casas@icloud.com","beneficiario": "Aarón Galarza Casas","edad": "10","GradoEscolar":4,"Escuela":"Lazaro Cardenas","PadreBenef": "Juan Francisco Galarza Luna","Telefono": 8124125055,"Segunda_Ref":"Graciela Casas Bravo", "TelefonoSegRef": 8112170220, "Nivel": 1 }
+{"tipo:":"registro", "timestamp": "1/19/2019 14:18:22","email": "lauraepuebla@hotmail.com","beneficiario": "Aarón Guerrero Puebla","edad": "11","GradoEscolar":6,"Escuela":"Esc. Primaria Petra Benavides de Salinas","PadreBenef": "Roberto Carlos Guerrero Moreno","Telefono": 8119994167,"Segunda_Ref":"Laura Esthela Puebla Zamora", "TelefonoSegRef": 8126472975, "Nivel": 2 }
