@@ -9,20 +9,13 @@
   <body>
       <div> 
           <ul>
-              <li><a href="#home">Home</a></li>
+              <li><a href="index.html">Home</a></li>
               <li style="float:right"><p class="active" >Galeria</p></li>
             </ul>
       </div>
 
-      <div class="row">
-      
-        </div>
+      <section class ="results"></section>
         
-        <div class="container">
-          <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
-          <img id="expandedImg" style="width:100%">
-          <div id="imgtext"></div>
-        </div>
    
          
          
@@ -35,4 +28,9 @@
 	  crossorigin="anonymous"></script>
    <script src="./javasc/galeria.js"></script>
   </body>
+
+  <div id="overlay" onclick="OverOff()">
+    <div id="ImageOver"></div>
+  </div>
+
 </html>

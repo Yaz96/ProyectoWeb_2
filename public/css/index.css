@@ -3,6 +3,11 @@ body {
 	background-size: 100%;
 	margin-left: 0%;
 	margin-top: 0%;
+	background-attachment: fixed;
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+ 	 background-size: cover;
    }
    
    #imgdiv img{
@@ -73,4 +78,12 @@ body {
    
    ul li:hover ul li {
 	display: block;
-   }
+	}
+	
+	.extra {
+
+	margin : 5px 5px;
+	float: left;
+    width: 24.99999%;
+    height: 300px;
+	}

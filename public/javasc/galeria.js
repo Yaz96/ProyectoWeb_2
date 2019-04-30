@@ -1,9 +1,12 @@
 
 function displayResults(data){
-	console.log("gola");
-console.log(data);
+
 for(let i = 0; i < data.posts.length; i ++){
-	$('.row').append(`<div class="column"><img src=" ${data.posts(i).url}/${data.posts(i).name}" alt="${data.posts(i).name} " style="width:100%" onclick="myFunction(this);"></div>`);
+	$('.results').append(`<div class= "Extra">
+							<div class="Video"> 
+							<img src=" ${data.posts[i].url}/${data.posts[i].name}" alt="${data.posts[i].name}" onclick="OverOn(this);" ></img>
+							</div>
+							</div>`);
 	}
 }
 
@@ -39,6 +42,20 @@ function watchForm(){ // Creates the image grid from the images that are in the 
 
 createImageFetch();
 
+}
+
+function OverOn(imgurl) {
+	document.getElementById("overlay").style.display = "block";
+	$("#fotoOv").remove();
+	$("#ImageOver").append( `<div id="fotoOv"> 
+	<img src=" ${imgurl.src}" alt="${imgurl.src}" " ></img>
+	</div>`);
+
+
+  }
+
+function OverOff(){
+	document.getElementById("overlay").style.display = "none";
 }
 
 
