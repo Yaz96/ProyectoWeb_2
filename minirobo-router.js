@@ -22,6 +22,26 @@ router.get('/img', ( req,res, next) => { // /list-sports
 
 	});
 });
+router.get('/log/:email', ( req,res, next) => { // /list-sports
+
+	let email = req.params.email;
+	Listposts.getlog(email)
+	.then( posts => {
+		res.status(200).json({
+			message : 'Successfully sending the list of users',
+			status : 200,
+			posts : posts
+		});
+	}).catch( err => {
+		console.log(err);
+		res.status(404).json({
+			message : `Email not Found`,
+			status : 404
+		});
+		return next();
+
+	});
+});
 
 
 router.get('/blog-posts/:author', (req, res, next) =>{
@@ -153,48 +173,24 @@ router.delete('/blog-posts/:id', (req,res,next) => {
   }
 }); 
 
-router.put('/blog-posts/:id', (req,res, next) => {
-	let body = req.body
+router.put('/status/:email', (req,res, next) => {
+	let stat = req.body.active
 	
 
 	let errIdNotFound = new Error("Id not Found");
 	errIdNotFound.statusCode = 406;
-	let errMissingId = new Error("Missing Id in Params");
-	errMissingId.statusCode = 406;
+	
 
-	let errMissingBod = new Error('Missing Body');
-	errMissingBod.statusCode = 404;
-
-	if ( !body.author && !body.title && !body.content && !body.publishDate ){
-		res.status(404).json({
-			message : "Missing Body",
-			status : 404
-			});
-			next("Status Error: " + errMissingBod.statusCode);
-			return next(errMissingBod);
-	}
-
-	let postId = req.params.id;
-
-	if (postId){
+	let postemail = req.params.email;
+	console.log(postemail);
+	
 		
 		let updatedFields = {};
 
-		if (body.title){
-			updatedFields.title = body.title;
-		}
-		if (body.content){
-			updatedFields.content = body.content;
-		}
-		if(body.author){
-			updatedFields.author = body.author;
-		}
-		if(body.publishDate){
-			updatedFields.publishDate = body.publishDate;
-		}
+			updatedFields.active = stat;
 
 
-		Listposts.put(updatedFields,postId)
+		Listposts.putactive(updatedFields,postemail)
 			.then(posts => {
 				res.status(200).json({
 					message : "Successfully updated the sport",
@@ -210,15 +206,8 @@ router.put('/blog-posts/:id', (req,res, next) => {
 
 				next();
 			});	
-	}
-	else{
-		res.status(406).json({
-			message : "Missing param 'id'",
-			status : 406
-		});
-
-		next();
-	}
+	
+	
 
 }); 
 

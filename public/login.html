@@ -7,37 +7,59 @@
     <link href="./css/login.css" type="text/css" rel="stylesheet" >
   </head>
   <body>
-    <div class="form">
       
+    <div class="form">
+        <div id= "imgdiv"><img src="./css/Pics/logo.png" alt="Minirobo Logo"></div>
 
       
       <div class="tab-content">
         <div id="area">   
           
-          <form >
+          <form class= "loginform" >
       
           <div class="envolt">
-            <label id = "etiquetas">
-              Email Address<span class="req">*</span>
-            </label>
-            <input type="email"required autocomplete="off"/>
+            <input id="email" type="email"required autocomplete="off" placeholder="Email"/>
           </div>
           
           <div class="envolt">
-            <label id = "etiquetas">
-              Password<span class="req">*</span>
-            </label>
-            <input type="password"required autocomplete="off"/>
+            <input id = "password" type="password"required autocomplete="off" placeholder="Enter Password"/>
           </div>
           
           <button type="submit" class="buttonLogin">Log-In</button>
           
           </form>
+          <button type="submit" class="buttonLogin" id="botonRegistro" onclick="document.getElementById('id01').style.display='block'">Register</button>
 
         </div>
         
         
       </div><!-- tab-content -->
+
+      <div id="id01" class="modal">
+  
+          <form class="modal-content animate" action="/action_page.php">
+            <div id = "Etiqueta">Registro</div>
+          <div class = "extra">
+            <div class="container">
+              <!--<label for="uname"><b>Username</b></label>-->
+              <input class="registro" type="text" placeholder="Nombre de Usuario" name="uname" required>
+              <input class="registro" type="text" placeholder="Email" name="uname" required>
+        
+              
+              <input class="registro" type="password" placeholder="Enter Password" name="psw" required>
+              <input class="registro" type="password" placeholder="Confirm Password" name="psw" required>
+                
+              <button type="submit">Send</button>
+          
+            </div>
+        
+            <!--  <div class="container" style="background-color:#f1f1f1">
+              <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+              <span class="psw">Forgot <a href="#">password?</a></span>
+            </div>-->
+          </div>
+          </form>
+        </div>
       
 </div>
     <script

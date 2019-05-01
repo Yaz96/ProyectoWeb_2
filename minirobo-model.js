@@ -8,7 +8,8 @@ let postSchema = mongoose.Schema({
 	//id : {type : Number, required : true, unique : true},
 	tipo : {type : String, required : false},
 	url : {type : String, required : false},
-	name : {type : String, required : false}
+	name : {type : String, required : false},
+	active : {type : Boolean, required : false}
 });
 let Posts = mongoose.model('Posts', postSchema);
 
@@ -23,19 +24,17 @@ const Listposts = {  //ListSports
 			throw new Error(err);
 	   });
 	},
-	getauth : function(author){
-
-		return Posts.find({ author : `${author}`})
+	getlog : function(email){
+		return Posts.find({ email : `${email}`})
 		.then(posts => {
 			if (posts){
 				return posts;
 			}
-			throw new Err("Author not found");
+			throw new Err("email not found");
 		})
 		.catch(err =>{
 			throw new Error(err);
 		});
-
 	},
 
 	post : function(post){
@@ -62,9 +61,10 @@ const Listposts = {  //ListSports
 			})
 	},
 
-	put: function(body,paramsId){
+	putactive: function(body,paramsId){
+		//let status= body.active;
 
-		return Posts.findOneAndUpdate({_id : paramsId}, { $set: body }, { new: true })
+		return Posts.findOneAndUpdate({email : paramsId}, { $set: body }, { new: true })
 			.then(posts => {
 				if (posts){
 					return posts;
