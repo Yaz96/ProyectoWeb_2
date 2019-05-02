@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Log In </title>
+    <link href="./css/anuncios.css" type="text/css" rel="stylesheet" >
+  </head>
+  <body>
+    
+    <!--<div id= "imgdiv"><img src="./css/Pics/logo.png" alt="Minirobo Logo"></div>-->
+      <ul id="mainul">  
+          <li><a href="index.html">Inicio</a>
+          </li>
+          <li><a href="#">MiniRobótica</a>
+           <ul>
+            <li><a href="">Fechas Importantes</a></li>
+            <li><a href="">Actividades</a></li>
+            <li><a href="">Eventos</a></li>
+            <li><a href="">Tienda</a></li>
+           
+           </ul>
+          </li>
+          <li><a href="#">Contacto</a>
+           <ul>
+            <li><a href="#">Map</a></li>
+            <li><a href="#">Email</a></li>
+            <li><a target="_blank" href="https://www.facebook.com/miniroboticatec/">Facebook</a></li>
+           </ul>
+          </li>
+          <li><a href="Galeria.html">Galeria</a></li>
+         </ul>
+
+
+
+    <div class="form">
+        <div id= "imgdiv"><img src="./css/Pics/logo.png" alt="Minirobo Logo"></div>
+        <form>
+			<input class="anndate" id="day" type="text" name="day" placeholder="Día"><br>
+			<input class="anndate" id="month" type="text" name="month" placeholder="Mes"><br>
+			<input class="anndate" id="year" type="text" name="year" placeholder="Año"><br>
+			<input id="ann" type="text" name="auth" placeholder="Autor"><br>
+			<textarea rows = "20" class="mss" name="message" placeholder="Escribe el anuncio..."></textarea> <br>
+			<input id="sub" type="submit" value="Submit">
+		</form>  
+	</div>
+    <script
+	  src="https://code.jquery.com/jquery-3.3.1.js"
+	  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+	  crossorigin="anonymous"></script>
+   <script src="./javasc/anuncios.js"></script>
+  </body>
+
+  <div id="overlay" onclick="OverOff()">
+    <div id="ImageOver"></div>
+  </div>
+
+</html>
