@@ -3,9 +3,48 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>This is the index </title>
+    <title>Minirobotica para Adolescentes </title>
+    <link href="./css/profile.css" type="text/css" rel="stylesheet" >
   </head>
   <body>
-    <h1> This is the profile section </h1>
+      <div id= "imgdiv"><img src="./css/Pics/logo.png" alt="Minirobo Logo"></div>
+      <ul id="mainul">  
+          <li><a href="#">Grupos</a>
+           <ul>
+            <li><a id = "Asistencia" class = "botMenu"> Asistencia</a></li>
+           </ul>
+           <ul>
+              <li><a id = "Calificaciones" class = "botMenu" >Calificaciones</a></li>
+             </ul>
+          </li>
+          <li><a id = "Organizacion" class = "botMenu" >Organizacion</a>
+           <ul>
+            <li><a id = "Salones" class = "botMenu" >Salones</a></li>
+            <li><a  id = "Anuncios" class = "botMenu" >Crear Anuncios</a></li>
+           </ul>
+          </li>
+          <li><a id = "Log-Out" class = "botMenu" >Log-Out</a> </li>
+         </ul>
+
+         <div class="slideshow-container" id = "extra">
+
+            
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            
+            </div>
+            <br>
+            
+            
+         
+         
+      <div class= "footer">
+        <p id= "imglogo2"><img src="./css/Pics/logo2.png" alt="Minirobo Logo2"></p>
+      </div>
+    <script
+	  src="https://code.jquery.com/jquery-3.3.1.js"
+	  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+	  crossorigin="anonymous"></script>
+    <script src="./javasc/profile.js"></script>
   </body>
 </html>

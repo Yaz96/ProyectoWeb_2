@@ -9,12 +9,66 @@ let postSchema = mongoose.Schema({
 	tipo : {type : String, required : false},
 	url : {type : String, required : false},
 	name : {type : String, required : false},
-	active : {type : Boolean, required : false}
+	active : {type : Boolean, required : false},
+	email : {type : String, required : false},
+	password :{type : String, required : false},
+	timestamp : {type : String, required : false},
+	beneficiario : {type : String, required : false},
+	edad : {type : String, required : false},
+	GradoEscolar : {type : String, required : false},
+	Escuela : {type : String, required : false},
+	PadreBenef : {type : String, required : false},
+	Publica_O_Privada : {type : String, required : false},
+	Telefono : {type : String, required : false},
+	TelefonoSegRef : {type : String, required : false},
+	Nivel : {type : String, required : false},
+	Privilegio : {type : Number, required : false},
+	mensaje : {type : String, required : false},
+	dia : {type : Number, required : false},
+	mes : {type : Number, required : false},
+	autor : {type : String, required : false}
+
 });
 let Posts = mongoose.model('Posts', postSchema);
 
 
 const Listposts = {  //ListSports
+	getmens : function(){
+		return Posts.find({tipo:"anuncio"})
+		.then (posts=>{
+			return posts;
+		})
+		.catch(err => {
+			throw new Error(err);
+	   });
+	},
+	getactusr : function(){
+		return Posts.find({tipo:"user", active:true})
+		.then (posts=>{
+			return posts;
+		})
+		.catch(err => {
+			throw new Error(err);
+	   });
+	},
+	get : function(){
+		return Posts.find()
+		.then (posts=>{
+			return posts;
+		})
+		.catch(err => {
+			throw new Error(err);
+	   });
+	},
+	gethist : function(nombre){
+		return Posts.find({tipo:"historial", beneficiario:`${nombre}` })
+		.then (posts=>{
+			return posts;
+		})
+		.catch(err => {
+			throw new Error(err);
+	   });
+	},
 	getimg : function(){
 		return Posts.find({tipo:"Imagen"})
 		.then (posts=>{
@@ -37,7 +91,7 @@ const Listposts = {  //ListSports
 		});
 	},
 
-	post : function(post){
+	postUser : function(post){
 		return Posts.create(post)
 			.then(posts => {
 				return posts;

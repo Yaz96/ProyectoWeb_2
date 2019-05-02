@@ -6,7 +6,9 @@
     <title>Log In </title>
     <link href="./css/login.css" type="text/css" rel="stylesheet" >
   </head>
+
   <body>
+      
       
     <div class="form">
         <div id= "imgdiv"><img src="./css/Pics/logo.png" alt="Minirobo Logo"></div>
@@ -22,10 +24,10 @@
           </div>
           
           <div class="envolt">
-            <input id = "password" type="password"required autocomplete="off" placeholder="Enter Password"/>
+            <input id = "password" type="password" required autocomplete="off" placeholder="Enter Password"/>
           </div>
           
-          <button type="submit" class="buttonLogin">Log-In</button>
+          <button type="submit" class="buttonLogin" >Log-In</button>
           
           </form>
           <button type="submit" class="buttonLogin" id="botonRegistro" onclick="document.getElementById('id01').style.display='block'">Register</button>
@@ -37,19 +39,21 @@
 
       <div id="id01" class="modal">
   
-          <form class="modal-content animate" action="/action_page.php">
+          <form class="modal-content animate">
             <div id = "Etiqueta">Registro</div>
           <div class = "extra">
             <div class="container">
               <!--<label for="uname"><b>Username</b></label>-->
-              <input class="registro" type="text" placeholder="Nombre de Usuario" name="uname" required>
-              <input class="registro" type="text" placeholder="Email" name="uname" required>
+              <input id="RegNomUsuario" class="registro" type="text" placeholder="Nombre de Usuario"  required>
+              <input id= "Regemail" class="registro" type="text" placeholder="Email" required>
         
               
-              <input class="registro" type="password" placeholder="Enter Password" name="psw" required>
-              <input class="registro" type="password" placeholder="Confirm Password" name="psw" required>
+              <input id="RegPass" class="registro" type="password" placeholder="Enter Password"  required>
+              <input id="RegPassCong" class="registro" type="password" placeholder="Confirm Password"  required>
+              <input id="RegCodAdm" class="registro" type="text" placeholder="Codigo Administrador"  required>
+              <input id="RegNivCuent" class="registro" type="text" placeholder="Nivel de Cuenta 1-max 3-min"  required>
                 
-              <button type="submit">Send</button>
+              <button type="submit" id="sendButt">Send</button>
           
             </div>
         

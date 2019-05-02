@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Minirobotica para Adolescentes </title>
+    <link rel="shortcut icon" type = "image/x-icon" href="./css/Pics/logo.png">
+    <link href="./css/tienda.css" type="text/css" rel="stylesheet" >
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+  </head>
+  <body>
+
+      <div id= "imgdiv"><img src="./css/Pics/logo.png" alt="Minirobo Logo"></div>
+      <ul id="mainul">
+          <li><a href="index.html">Inicio</a></li>   
+          <li><a href="#">Sobre Nosotros</a>
+           <ul>
+            <li><a href="#">Equipo de Trabajo</a></li>
+            <li><a target="_blank" href="./css/Pics/Infografia.png">Infografia</a></li>
+            <li><a href="Historia.html">Historia</a></li>
+           </ul>
+          </li>
+          <li><a href="#">Contacto</a>
+           <ul>
+            <li><a href="#">Map</a></li>
+            <li><a href="#">Email</a></li>
+            <li><a target="_blank" href="https://www.facebook.com/miniroboticatec/">Facebook</a></li>
+           </ul>
+          </li>
+          <li><a href="Galeria.html">Galeria</a></li>
+          <li><a href="login.html">Registro</a></li>
+         </ul>
+
+
+         <div id="slide_container">
+          <img class="ropa" id="ropa1" src="./css/Pics/playera1.png">
+          <img class="ropa" id="ropa2" src="./css/Pics/playera2.jpg">
+          <img class="ropa" id="ropa3" src="./css/Pics/playera3.jpg">
+          <img class="ropa" id="ropa4" src="./css/Pics/hoodie.jpg">
+
+          <button class="left" onclick="plusDivs(-1)">&#10094;</button>
+          <button class="right" onclick="plusDivs(1)">&#10095;</button>
+      </div>
+
+      <div id= "inst">
+        <h2>Instrucciones</h2>
+        <p>Seleccione las playeras y cantidad de playeras con sus respectivas cantidades</p>
+      </div>
+
+      <form>
+      <table id="opc">
+        <tr>
+          <th>Tipo</th>
+          <th>Talla</th>
+        </tr>
+        <tr>
+          <td><label class="container">Playera 1
+                <input type="checkbox" checked="checked">
+                <span class="checkmark"></span>
+              </label>
+          </td>
+          <td>
+            <select>
+              <option value="0">Niño Chica</option>
+              <option value="1">Niño Mediana</option>
+              <option value="2">Niño Grande</option>
+              <option value="3">Adulto Chica</option>
+              <option value="4">Adulto Mediana</option>
+              <option value="5">Adulto Grande</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label class="container">Playera 2
+              <input type="checkbox">
+              <span class="checkmark"></span>
+            </label>
+          </td>
+          <td>
+            <select>
+              <option value="0">Niño Chica</option>
+              <option value="1">Niño Mediana</option>
+              <option value="2">Niño Grande</option>
+              <option value="3">Adulto Chica</option>
+              <option value="4">Adulto Mediana</option>
+              <option value="5">Adulto Grande</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label class="container">Playera 3
+              <input type="checkbox">
+              <span class="checkmark"></span>
+            </label>
+          </td>
+          <td>
+            <select>
+              <option value="0">Niño Chica</option>
+              <option value="1">Niño Mediana</option>
+              <option value="2">Niño Grande</option>
+              <option value="3">Adulto Chica</option>
+              <option value="4">Adulto Mediana</option>
+              <option value="5">Adulto Grande</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label class="container">Hoodie
+              <input type="checkbox">
+              <span class="checkmark"></span>
+            </label>
+          </td>
+          <td>
+            <select>
+              <option value="0">Niño Chica</option>
+              <option value="1">Niño Mediana</option>
+              <option value="2">Niño Grande</option>
+              <option value="3">Adulto Chica</option>
+              <option value="4">Adulto Mediana</option>
+              <option value="5">Adulto Grande</option>
+            </select>
+          </td>
+        </tr>
+      </table>
+
+      <label>Enviar
+        <input type="submit" id="btn">
+      </label>
+      </form>
+      <!--<div class= "footer">
+        <p id= "imglogo2"><img src="./css/Pics/logo2.png" alt="Minirobo Logo2"></p>
+      </div>-->
+    
+
+    <script type="text/javascript" src="./javasc/tienda.js"></script>
+  </body>
+</html>

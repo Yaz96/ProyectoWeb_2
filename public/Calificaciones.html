@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Minirobotica para Adolescentes </title>
+    <link href="./css/Calificaciones.css" type="text/css" rel="stylesheet" >
+  </head>
+  <body>
+      <div> 
+          <ul>
+              <li><a href="index.html">Home</a></li>
+              <li style="float:right"><p class="active" >Registro</p></li>
+            </ul>
+      </div>
+   
+		
+
+      <form >
+        <div class="container">
+          <h1>Calificaciones</h1>
+          <hr>
+          <label ><b>Nombre del Beneficiario (niño/a)</b></label>
+          <input  id = "nombreNino" type="text" placeholder="Nombre"  required>
+          <label ><b>Nivel Inscrito</b></label> <br>
+          <input type="radio" name="nivel" value="Nivel1" checked> Nivel 1<br>
+        <input type="radio" name="nivel" value="Nivel2"> Nivel 2<br>
+        <input type="radio" name="nivel" value="Nivel3"> Nivel 3<br> 
+        
+        <div id ="results"><div id= "extra"> <label id = "ResCalif"><b> Calificaciones: </b> </label> <br><label id = "ResFaltas"><b> Faltas: </b> </label>  </div> </div>
+
+          <hr>
+      
+          <button type="submit" id= "BotonEnviar" class="registerbtn">Enviar</button>
+        </div>
+
+        
+        </form>
+        
+   
+         
+         
+    
+    <script
+	  src="https://code.jquery.com/jquery-3.3.1.js"
+	  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+	  crossorigin="anonymous"></script>
+   <script src="./javasc/Calificaciones.js"></script>
+  </body>
+
+
+</html>

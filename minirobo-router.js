@@ -2,6 +2,87 @@ const express = require('express');
 //const uuid = require('uuid');
 const router = express.Router();
 const {Listposts} = require('./minirobo-model');
+router.get('/getanun/', ( req,res, next) => { // /list-sports
+
+	Listposts.getmens()
+		.then( posts => {
+			res.status(200).json({
+				message : 'Successfully sending the list of posts',
+				status : 200,
+				posts : posts
+			});
+		}).catch( err => {
+			res.status(500).json({
+				message : `Internal server error.`,
+				status : 500
+			});
+			return next();
+	
+		});
+	});
+
+
+router.get('/active-us/', ( req,res, next) => { // /list-sports
+
+	Listposts.getactusr()
+		.then( posts => {
+			res.status(200).json({
+				message : 'Successfully sending the list of posts',
+				status : 200,
+				posts : posts
+			});
+		}).catch( err => {
+			res.status(500).json({
+				message : `Internal server error.`,
+				status : 500
+			});
+			return next();
+	
+		});
+	});
+
+
+router.get('/hist/:nombre', ( req,res, next) => { // /list-sports
+
+	let nombre = req.params.nombre;
+	console.log(nombre);
+
+	Listposts.gethist(nombre)
+		.then( posts => {
+			res.status(200).json({
+				message : 'Successfully sending the list of posts',
+				status : 200,
+				posts : posts
+			});
+		}).catch( err => {
+			res.status(500).json({
+				message : `Internal server error.`,
+				status : 500
+			});
+			return next();
+	
+		});
+	});
+
+router.get('/all', ( req,res, next) => { // /list-sports
+
+
+Listposts.get()
+	.then( posts => {
+		res.status(200).json({
+			message : 'Successfully sending the list of posts',
+			status : 200,
+			posts : posts
+		});
+	}).catch( err => {
+		res.status(500).json({
+			message : `Internal server error.`,
+			status : 500
+		});
+		return next();
+
+	});
+});
 
 router.get('/img', ( req,res, next) => { // /list-sports
 
@@ -44,57 +125,53 @@ router.get('/log/:email', ( req,res, next) => { // /list-sports
 });
 
 
-router.get('/blog-posts/:author', (req, res, next) =>{
 
-	let blogAuthor = req.params.author;
-	let errNoauth = new Error(`No author in parameters.` )
-	errNoauth.statusCode = 406;
-
-	if(!blogAuthor){
-		next(errNoauth);
-	}
-
-	Listposts.getauth(blogAuthor) 
-	.then(posts => {
-		res.status(200).json({
-			message : "Successfully sent the post",
-			status : 200,
-			posts : posts
-		});
-	})
-	.catch(err => {
-		res.status(404).json({
-			message : "Author not found in the list",
-			status : 404
-		});
-	});	
+router.post('/create-user', (req,res,next) => {
 	
-});
-
-
-router.post('/blog-posts', (req,res,next) => {
-	let requiredFields = ['title', 'content','author','publishDate'];
-
-	
-	for ( let i = 0; i < requiredFields.length; i ++){
-		let currentField = requiredFields[i];
-
-		if (! (currentField in req.body)){
-			res.status(406).json({
-				message : `Missing field ${currentField} in body.`,
-				status : 406
-			});
-			return next();
-		}
-	}
 	let objectToAdd = {
-		title : req.body.title,
-		content : req.body.content,
-		author : req.body.author,
-		publishDate: req.body.publishDate
+		tipo : req.body.tipo,
+		name : req.body.name,
+		email : req.body.email,
+		password: req.body.password,
+		Privilegio:req.body.Privilegio,
+		active : true
 	};
 
-	Listposts.post(objectToAdd)
+	Listposts.postUser(objectToAdd)
+		.then(posts => {
+			res.status(201).json({
+				message : "Successfully added the user",
+				status : 201,
+				posts : posts
+			});
+		})
+		.catch( err => {
+			res.status(400).json({
+				message : `${err}`,
+				status : 400
+			});
+			return next();
+		});
+
+});
+router.post('/create-registry', (req,res,next) => {
+	
+	let objectToAdd = {
+		tipo: "registro",
+		timestamp: req.body.timestamp,
+		email: req.body.email,
+		beneficiario: req.body.beneficiario,
+		edad: req.body.edad,
+		GradoEscolar:req.body.GradoEscolar,
+		Escuela: req.body.Escuela,
+		Publica_O_Privada:req.body.Publica_O_Privada,
+		PadreBenef: req.body.PadreBenef,
+		Telefono: req.body.Telefono,
+		TelefonoSegRef:req.body.TelefonoSegRef,
+		Nivel: req.body.Nivel
+	};
+
+	Listposts.postUser(objectToAdd)
 		.then(posts => {
 			res.status(201).json({
 				message : "Successfully added the post",
@@ -110,7 +187,7 @@ router.post('/blog-posts', (req,res,next) => {
 			return next();
 		});
 
-}); 
+});  
 
 router.delete('/blog-posts/:id', (req,res,next) => {
 
@@ -122,16 +199,6 @@ router.delete('/blog-posts/:id', (req,res,next) => {
 
 	let errIDnotFound = new Error(`Id not found` );
 	errIDnotFound.statusCode = 404;
-
-  if( !paramsId  ||  !bodyId || bodyId != paramsId  ){
-    res.status(406).json({
-      message : "Missing field Id in body or path, or it doesn't match",
-      status : 406
-		});
-		next("Status Error: " + errMissingField.statusCode);
-		return next(errMissingField);
-
-  }
 
   let sportId = req.params.id;
 
@@ -182,7 +249,7 @@ router.put('/status/:email', (req,res, next) => {
 	
 
 	let postemail = req.params.email;
-	console.log(postemail);
+
 	
 		
 		let updatedFields = {};
